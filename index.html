@@ -60,7 +60,7 @@
 
         section {
             width: 100%;
-            height: 100vh; 
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -68,6 +68,8 @@
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s ease;
+
+            padding: 40px;
         }
 
         .skills {
@@ -118,6 +120,35 @@
 
         .projects {
             background-color: #3d3d3d;
+        }
+
+        .project-box {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .project-img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            border: 2px solid #fff;
+            border-radius: 20px;
+        }
+
+        .project-img:hover {
+            transform: scale(1.1);
+        }
+
+        .project-description {
+            text-align: center;
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 10px;
         }
 
         .contact {
@@ -196,18 +227,30 @@
         <div>
             <h1>My Projects</h1>
             <p>진행 중인 프로젝트와 결과물을 소개합니다.</p>
+            <div class="project-box">
+                <div>
+                    <img src="./assets/projects/image copy.png" alt="Project 1" class="project-img">
+                    <div class="project-description">프로젝트 1 소개 내용</div>
+                </div>
+                <div>
+                    <img src="./assets/projects/image copy.png" alt="Project 2" class="project-img">
+                    <div class="project-description">프로젝트 2 소개 내용</div>
+                </div>
+                <div>
+                    <img src="./assets/projects/image copy.png" alt="Project 3" class="project-img">
+                    <div class="project-description">프로젝트 3 소개 내용</div>
+                </div>
+            </div>
         </div>
-    </section>
+    </section>    
 
     <section id="skills" class="skills">
         <div>
             <h1>My Skills</h1>
             <div class="skills-list">
-                <img src="./stack/image copy 3.png" alt="javascript" class="skill-img">
-                <img src="./stack/image copy 7.png" alt="TypeScript" class="skill-img">
-                <img src="./stack/image copy 6.png" alt="nest.js" class="skill-img">
-                <img src="./stack/image copy.png" alt="docker" class="skill-img">
-                <img src="./stack/image.png" alt="aws" class="skill-img">
+                <img src="./assets/stack/image copy 2.png" alt="node.js" class="skill-img">
+                <img src="./assets/stack/image copy 3.png" alt="docker" class="skill-img">
+                <img src="./assets/stack/image.png" alt="aws" class="skill-img">
             </div>
         </div>
     </section>    
@@ -244,9 +287,8 @@
                 const targetId = event.target.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
-
                 window.scrollTo({
-                    top: targetSection.offsetTop - navbarHeight, 
+                    top: targetSection.offsetTop - navbarHeight,
                     behavior: 'smooth',
                 });
             });
